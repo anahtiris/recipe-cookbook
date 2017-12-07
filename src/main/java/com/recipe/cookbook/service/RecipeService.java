@@ -31,4 +31,9 @@ public class RecipeService {
         Assert.notNull(recipe, "Recipe must not be null");
         return recipeRepository.saveAndFlush(recipe);
     }
+    
+    public void deleteRecipe(Long id) {
+        Assert.notNull(id, "ID must not be null");
+        recipeRepository.delete(id);
+    }
 }
